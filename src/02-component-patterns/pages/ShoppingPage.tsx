@@ -1,8 +1,6 @@
-//import { ProductImage, ProductTitle, ProductsButtons } from "../components"
-
 import { ProductImage, ProductTitle, ProductsButtons } from "../components"
 import ProductCard from '../components/index';
-
+import '../styles/custom-styles.css'
 
 
 const product = {
@@ -23,20 +21,38 @@ export const ShoppingPage = () => {
                 flexDirection: "row",
                 flexWrap: "wrap"
             }}>
-                <ProductCard product={product}>
-                    <ProductImage />
-                    <ProductTitle title={"cafe"} />
-                    <ProductsButtons />
+                <ProductCard product={product} className="bg-dark text-white">
+                    <ProductCard.Image className="custom-imagen" />
+                    <ProductCard.Title className="text-bold" />
+                    <ProductCard.Buttons className="custom-buttons" />
                 </ProductCard>
 
+                <ProductCard
+                    product={product}
+                    className="bg-dark text-white"
+                >
+                    <ProductImage className="custom-imagen" />
+                    <ProductTitle className="text-bold" />
+                    <ProductsButtons className="custom-buttons" />
+                </ProductCard>
 
-                <ProductCard product={product}>
-                    <ProductCard.Image />
-                    <ProductCard.Title />
-                    <ProductCard.Buttons />
+                <ProductCard
+                    product={product}
+                    style={{ backgroundColor: "#70D1F8" }}
+                >
+                    <ProductImage style={{
+                        boxShadow: '10px 10px 10px rgba(0,0,0,0.2'
+                    }} />
+                    <ProductTitle style={{
+                        fontWeight: 'bold'
+                    }} />
+                    <ProductsButtons style={{
+                        display: 'flex',
+                        justifyContent: 'end'
+                    }} />
                 </ProductCard>
             </div>
-        </div>
+        </div >
 
     )
 }
