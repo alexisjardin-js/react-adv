@@ -1,8 +1,8 @@
 
-import { Props as ProductCardProps} from '../components/ProductCard';
+import { Props as ProductCardProps } from '../components/ProductCard';
 import { Props as PropsButtons } from '../components/ProductButtons';
 import { Props as PropsImg } from '../components/ProductImage';
-import { Props as PropsTitle} from '../components/ProductTitle';
+import { Props as PropsTitle } from '../components/ProductTitle';
 
 
 export interface Product {
@@ -18,9 +18,19 @@ export interface ProductContextProps {
 
 }
 
-export interface ProductCardHOCProps{
+export interface ProductCardHOCProps {
   ({ children, product }: ProductCardProps): JSX.Element;
-  Buttons:(Props:PropsButtons) => JSX.Element;
+  Buttons: (Props: PropsButtons) => JSX.Element;
   Image: (Props: PropsImg) => JSX.Element;
-  Title: (Props:PropsTitle) => JSX.Element;
+  Title: (Props: PropsTitle) => JSX.Element;
+}
+
+
+export interface onChangeArgs {
+  product: Product;
+  count: number;
+}
+
+export interface ProductInCart extends Product {
+  count: number;
 }
